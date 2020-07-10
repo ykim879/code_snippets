@@ -16,15 +16,26 @@ dates = [
 ]
 
 y = [0, 1, 3, 4, 6, 5, 7]
+# date_format = mpl_dates.DateFormatter("%b, %d %Y")
+# plt.gca().xaxis.set_major_formatter(date_format)
+# plt.plot_date(dates, y, linestyle = "solid")
 
-# data = pd.read_csv('data.csv')
-# price_date = data['Date']
-# price_close = data['Close']
+data = pd.read_csv('data.csv')
+data['Date'] = pd.to_datetime(data['Date'])
+data.sort_values('Date', inplace = True)
 
-# plt.title('Bitcoin Prices')
-# plt.xlabel('Date')
-# plt.ylabel('Closing Price')
+price_date = data['Date']
+price_close = data['Close']
+
+date_format = mpl_dates.DateFormatter("%b, %d %Y")
+plt.gca().xaxis.set_major_formatter(date_format)
+plt.plot_date(dates, y, linestyle = "solid")
+
+plt.title('Bitcoin Prices')
+plt.xlabel('Date')
+plt.ylabel('Closing Price')
 
 plt.tight_layout()
 
 plt.show()
+plt.savefig("TimeSeries.png")

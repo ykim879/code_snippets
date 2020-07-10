@@ -1,6 +1,7 @@
 
 from matplotlib import pyplot as plt
 
+
 plt.xkcd()
 
 ages_x = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
