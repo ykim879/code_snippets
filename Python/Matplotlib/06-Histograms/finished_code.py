@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 plt.style.use('fivethirtyeight')
 
 data = pd.read_csv('data.csv')
-ids = data['Responder_id']
+#ids = data['Responder_id']
 ages = data['Age']
 
 bins = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -25,3 +25,4 @@ plt.ylabel('Total Respondents')
 plt.tight_layout()
 
 plt.show()
+plt.savefig("Histogram.png")
