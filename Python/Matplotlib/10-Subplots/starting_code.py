@@ -2,7 +2,8 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 
-plt.style.use('seaborn')
+#print(plt.style.available)
+plt.style.use('fast')
 
 data = pd.read_csv('data.csv')
 ages = data['Age']
@@ -33,3 +34,5 @@ ax2.set_ylabel('Median Salary (USD)')
 plt.tight_layout()
 
 plt.show()
+
+fig.savefig('my_fig.png')
